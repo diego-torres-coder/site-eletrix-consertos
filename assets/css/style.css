@@ -1,0 +1,52 @@
+/* Eletrix Consertos — estilos complementares ao Tailwind (CDN) */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Compensa o cabeçalho fixo (sempre uma linha) ao rolar até uma âncora */
+section[id], main [id] {
+  scroll-margin-top: 84px;
+}
+
+/* Esconde a barra de rolagem da faixa de links rápidos no cabeçalho, sem remover a rolagem */
+nav[class*="overflow-x-auto"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Foco visível no teclado, em qualquer elemento interativo */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #FFC93C;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Evita flash de conteúdo Alpine antes da inicialização */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Selo de texto (eyebrow) usado acima dos títulos de seção */
+.eyebrow {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2451A9;
+}

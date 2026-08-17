@@ -1,0 +1,46 @@
+# Eletrix Consertos — configuração do servidor para o site estático
+
+# Força HTTPS (301) e o domínio canônico sem "www"
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.eletrixconsertos\.com\.br$ [NC]
+  RewriteRule ^(.*)$ https://eletrixconsertos.com.br/$1 [L,R=301]
+</IfModule>
+
+# Página de erro 404 aponta para o index (site one-page, sem outras páginas)
+ErrorDocument 404 /index.html
+
+# Compressão Gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json
+</IfModule>
+
+# Cache do navegador: imagens 1 mês, CSS/JS 1 dia, HTML sem cache
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpe?g|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# Impede a listagem de diretórios
+Options -Indexes
