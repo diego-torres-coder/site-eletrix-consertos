@@ -50,3 +50,51 @@ button:focus-visible {
   text-transform: uppercase;
   color: #2451A9;
 }
+
+/* Animação sutil dos botões: tom mais escuro + leve elevação ao passar o mouse */
+.btn-hover-gold,
+.btn-hover-outline,
+.btn-hover-outline-light,
+.btn-hover-float {
+  transition: background-color 200ms ease, background-image 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-hover-gold:hover {
+  background-color: #E6B532;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(3, 34, 98, 0.18);
+}
+
+.btn-hover-outline:hover {
+  color: #001141;
+  border-color: #001141;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(3, 34, 98, 0.12);
+}
+
+.btn-hover-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-hover-float:hover {
+  background-image: linear-gradient(100deg, #E6B532 0%, #B38900 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 17, 65, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-hover-gold,
+  .btn-hover-outline,
+  .btn-hover-outline-light,
+  .btn-hover-float {
+    transition: none;
+  }
+  .btn-hover-gold:hover,
+  .btn-hover-outline:hover,
+  .btn-hover-outline-light:hover,
+  .btn-hover-float:hover {
+    transform: none;
+  }
+}
