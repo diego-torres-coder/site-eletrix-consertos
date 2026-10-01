@@ -8,9 +8,13 @@
 
   RewriteCond %{HTTP_HOST} ^www\.eletrixconsertos\.com\.br$ [NC]
   RewriteRule ^(.*)$ https://eletrixconsertos.com.br/$1 [L,R=301]
+
+  # URLs limpas: serve o arquivo .html correspondente sem expor a extensão
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([^.]+)$ $1.html [NC,L]
 </IfModule>
 
-# Página de erro 404 aponta para o index (site one-page, sem outras páginas)
+# Página de erro 404 aponta para o index
 ErrorDocument 404 /index.html
 
 # Compressão Gzip
