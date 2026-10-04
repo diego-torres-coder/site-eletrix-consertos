@@ -98,3 +98,33 @@ button:focus-visible {
     transform: none;
   }
 }
+
+/* Índice do artigo (blog): recolhível no celular, fixo e sempre aberto no desktop */
+details.toc > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.toc > summary::-webkit-details-marker {
+  display: none;
+}
+@media (min-width: 1024px) {
+  details.toc > summary {
+    display: none;
+  }
+  details.toc > .toc-body {
+    display: block !important;
+  }
+}
+
+/* Tipografia do corpo do artigo */
+.article-body p {
+  margin-bottom: 1.1rem;
+}
+.article-body ul {
+  list-style: disc;
+  padding-left: 1.3rem;
+  margin-bottom: 1.1rem;
+}
+.article-body ul li {
+  margin-bottom: 0.4rem;
+}

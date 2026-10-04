@@ -206,22 +206,22 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"></noscript>
 
 <!-- Tailwind: classes usadas extraídas para CSS estático (sem o motor da CDN em runtime) -->
-<link rel="stylesheet" href="/assets/css/tailwind.min.css?v=3.0">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css?v=4.0">
 
 <!-- Alpine.js: usado apenas no menu mobile e no accordion de FAQ -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-<link rel="stylesheet" href="/assets/css/style.min.css?v=2.0">
+<link rel="stylesheet" href="/assets/css/style.min.css?v=4.0">
 </head>
 <body class="bg-white text-bodytext font-body antialiased">
 
 <!-- CABEÇALHO FIXO -->
 <header x-data="siteHeader" class="fixed top-0 inset-x-0 z-50 bg-navy shadow-[0_2px_12px_rgba(0,17,65,0.25)]">
   <div class="max-w-[1200px] mx-auto px-5 py-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-    <a href="#hero" class="order-1 flex items-center shrink-0" aria-label="Eletrix Consertos — topo da página">
+    <a href="#hero" class="shrink-0 mr-auto" aria-label="Eletrix Consertos — topo da página">
       <img src="/assets/img/logo.webp" alt="Eletrix Consertos" width="192" height="38" fetchpriority="high" class="h-9 w-auto">
     </a>
-    <nav class="order-3 sm:order-2 w-full sm:w-auto sm:ml-auto flex items-center gap-1.5 overflow-x-auto" aria-label="Seções desta página">
+    <nav class="hidden sm:flex items-center gap-1.5 order-2 overflow-x-auto [scrollbar-width:none]" aria-label="Seções desta página">
       <a href="#problemas" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Problemas</a>
       <a href="#como-funciona" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Como funciona</a>
       <a href="#faq" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">FAQ</a>
@@ -754,6 +754,7 @@
         <a href="/conserto-de-lava-loucas" class="text-white font-body text-sm font-medium">Conserto de lava-louças</a>
         <a href="/conserto-de-cooktop" class="text-footertext font-body text-sm hover:text-white">Conserto de cooktop</a>
         <a href="/retirada-de-eletrodomesticos" class="text-footertext font-body text-sm hover:text-white">Retirada de eletrodomésticos</a>
+        <a href="/blog/" class="text-footertext font-body text-sm hover:text-white">Blog</a>
         <a href="/" class="text-footertext font-body text-sm hover:text-white">Página inicial</a>
       </nav>
     </div>

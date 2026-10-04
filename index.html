@@ -226,12 +226,12 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"></noscript>
 
 <!-- Tailwind: classes usadas extraídas para CSS estático (sem o motor da CDN em runtime) -->
-<link rel="stylesheet" href="/assets/css/tailwind.min.css?v=2.1">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css?v=4.0">
 
 <!-- Alpine.js: usado apenas no menu mobile e no accordion de FAQ -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
-<link rel="stylesheet" href="/assets/css/style.min.css?v=2.0">
+<link rel="stylesheet" href="/assets/css/style.min.css?v=4.0">
 </head>
 <body class="bg-white text-bodytext font-body antialiased">
 
@@ -244,6 +244,7 @@
     <nav class="hidden sm:flex items-center gap-1.5 order-2 overflow-x-auto [scrollbar-width:none]">
       <a href="#sobre" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Sobre</a>
       <a href="#servicos" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Serviços</a>
+      <a href="/blog/" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Blog</a>
       <a href="#faq" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">FAQ</a>
       <a href="#contato" class="shrink-0 px-3.5 py-1.5 rounded-full bg-white/10 text-white font-heading font-medium text-[13px] hover:bg-white/20">Contato</a>
     </nav>
@@ -261,6 +262,7 @@
         <div id="menu-mais" x-show="menuOpen" x-cloak x-transition.origin.top.right class="absolute right-0 top-[calc(100%+10px)] w-64 bg-white rounded-xl shadow-[0_12px_32px_rgba(0,17,65,0.25)] border border-cardborder py-2 flex flex-col">
           <a href="#sobre" @click="closeMenu" class="sm:hidden text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Sobre</a>
           <a href="#servicos" @click="closeMenu" class="sm:hidden text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Serviços</a>
+          <a href="/blog/" @click="closeMenu" class="text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Blog</a>
           <a href="#beneficios" @click="closeMenu" class="text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Benefícios</a>
           <a href="#como-funciona" @click="closeMenu" class="text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Como funciona</a>
           <a href="#depoimentos" @click="closeMenu" class="text-navy font-heading font-medium text-[15px] px-5 py-3 hover:bg-[#F6F7F9]">Depoimentos</a>
@@ -781,6 +783,7 @@
         <a href="#area-atuacao" class="text-footertext font-body text-sm hover:text-white">Área de atuação</a>
         <a href="#faq" class="text-footertext font-body text-sm hover:text-white">FAQ</a>
         <a href="#contato" class="text-footertext font-body text-sm hover:text-white">Contato</a>
+        <a href="/blog/" class="text-footertext font-body text-sm hover:text-white">Blog</a>
         <a href="/conserto-de-micro-ondas" class="text-footertext font-body text-sm hover:text-white">Conserto de micro-ondas</a>
         <a href="/conserto-de-maquina-de-lavar" class="text-footertext font-body text-sm hover:text-white">Conserto de máquina de lavar</a>
         <a href="/conserto-de-lava-e-seca" class="text-footertext font-body text-sm hover:text-white">Conserto de lava e seca</a>
