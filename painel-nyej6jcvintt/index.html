@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noai, noimageai">
+<meta name="theme-color" content="#021433">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Agenda Eletrix">
+<title>Agenda Eletrix</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="agenda.css">
+</head>
+<body>
+<header>
+  <div class="brand">ELETRIX<small id="todayLbl"></small></div>
+  <div class="hbtns">
+    <button class="pill" id="goToday">Hoje</button>
+    <button class="pill" id="openSet" aria-label="Ajustes e backup">Ajustes</button>
+  </div>
+</header>
+<div class="notice" id="notice" hidden><span id="noticeTxt"></span><button id="noticeBtn">Fazer backup</button></div>
+
+<div class="strip-wrap">
+  <button class="nav" id="prev" aria-label="Semana anterior">‹</button>
+  <div class="strip" id="strip"></div>
+  <button class="nav" id="next" aria-label="Próxima semana">›</button>
+</div>
+<div class="month" id="monthLbl"></div>
+
+<h2 id="dayTitle"></h2>
+<div class="daysum" id="daySum"></div>
+<div id="periods"></div>
+
+<h2>Próximas vagas</h2>
+<div class="daysum">Períodos com espaço para encaixe, a partir de hoje.</div>
+<div class="free-list" id="freeList"></div>
+
+<button class="fab" id="fab">+ Novo atendimento</button>
+<div id="sheetRoot"></div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+
+<script src="agenda.js"></script>
+</body>
+</html>

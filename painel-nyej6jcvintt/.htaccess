@@ -1,0 +1,38 @@
+# ===== Agenda Eletrix — pasta privada (uso pessoal) =====
+# Esta pasta não deve ser indexada, listada nem acessada por robôs.
+
+# Desliga a listagem de arquivos do diretório (ex.: /fonts/ não mostra a lista)
+Options -Indexes
+
+# Tipos MIME corretos para o manifesto do app e as fontes
+AddType application/manifest+json .webmanifest
+AddType font/woff2 .woff2
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) Força HTTPS somente nesta pasta (http -> https)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2) Responde 403 para robôs de busca e de IA, pelo User-Agent (NC = ignora maiúsc./minúsc.)
+  RewriteCond %{HTTP_USER_AGENT} (Googlebot|Google-Extended|GoogleOther|Bingbot|GPTBot|ChatGPT-User|OAI-SearchBot|ClaudeBot|Claude-Web|Claude-User|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Bytespider|Amazonbot|Applebot-Extended|meta-externalagent|FacebookBot|Diffbot|cohere-ai|YouBot|DuckAssistBot|Timpibot|ImagesiftBot) [NC]
+  RewriteRule ^ - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Não indexar / não arquivar / não usar em IA — em todas as respostas desta pasta
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate, noai, noimageai"
+  # Não vazar o endereço secreto para WhatsApp/Mapa ao clicar nos links
+  Header always set Referrer-Policy "no-referrer"
+  # Segurança adicional
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  # Só carrega recursos do próprio domínio (CSS/JS/fontes/ícones são locais)
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'"
+
+  # O index.html não fica em cache de proxies (o service worker cuida do modo sem internet)
+  <FilesMatch "index\.html$">
+    Header always set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
