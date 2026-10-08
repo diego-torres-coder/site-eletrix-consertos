@@ -182,13 +182,17 @@ details.toc > summary::-webkit-details-marker {
 .btn-ligar:hover { background: rgba(255,201,60,.12); }
 .mobile-horarios { color: #8CB1F4; font-size: 13px; text-align: center; margin-top: 12px; }
 
-/* Com JS: a navegação vira painel deslizante acionado pelo hambúrguer */
-html.js .burger { display: inline-flex; }
-html.js .main-nav { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; order: 0; margin: 0; padding: 12px 14px 32px; border-radius: 0; background: #032262; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .25s ease, visibility .25s ease; }
-html.js .site-header.is-open .main-nav { transform: none; visibility: visible; }
+/* Com JS, o submenu começa fechado e abre via aria-expanded (desktop e mobile) */
 html.js .submenu { display: none; }
 html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
-html.js body.menu-aberto { overflow: hidden; }
+
+/* Painel deslizante — apenas no mobile (abaixo de 960px) */
+@media (max-width: 959px) {
+  html.js .burger { display: inline-flex; }
+  html.js .main-nav { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; order: 0; margin: 0; padding: 12px 14px 32px; border-radius: 0; background: #032262; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .25s ease, visibility .25s ease; }
+  html.js .site-header.is-open .main-nav { transform: none; visibility: visible; }
+  html.js body.menu-aberto { overflow: hidden; }
+}
 
 /* Oculta o WhatsApp só-ícone em telas muito estreitas */
 @media (max-width: 359px) {
@@ -200,8 +204,8 @@ html.js body.menu-aberto { overflow: hidden; }
    Desktop (>= 960px): menu em barra, submenu suspenso
    =================================================================== */
 @media (min-width: 960px) {
-  .site-header__inner { padding: 10px 20px; gap: 16px; min-height: 64px; }
-  .brand img { height: 36px; }
+  .site-header__inner { padding: 6px 20px; gap: 16px; min-height: 56px; }
+  .brand img { height: 34px; }
   .burger { display: none !important; }
   .brand { margin-right: 0; }
   .main-nav { position: static !important; transform: none !important; visibility: visible !important; overflow: visible !important; order: 0; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; width: auto; background: none; margin: 0; padding: 0; }
