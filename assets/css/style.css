@@ -168,12 +168,12 @@ details.toc > summary::-webkit-details-marker {
 .site-header.is-open .burger__box span:nth-child(2) { opacity: 0; }
 .site-header.is-open .burger__box span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.main-nav { display: block; width: 100%; order: 5; background: #021a4d; margin-top: 8px; border-radius: 12px; padding: 6px; }
+.main-nav { display: block; width: 100%; order: 5; background: #032262; margin-top: 8px; border-radius: 12px; padding: 6px; }
 .main-nav__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .main-nav .nav-link { width: 100%; justify-content: flex-start; min-height: 56px; border-radius: 8px; }
 .main-nav__list > li { border-bottom: 1px solid rgba(255,255,255,.08); }
 .main-nav__list > li:last-child { border-bottom: 0; }
-.submenu { background: rgba(255,255,255,.04); border-radius: 8px; margin: 2px 6px 8px; }
+.submenu { background: transparent; border-radius: 8px; margin: 2px 6px 8px; }
 .submenu a { display: flex; align-items: center; color: #DCE7FF; min-height: 48px; padding: 10px 16px 10px 28px; border-radius: 6px; }
 .submenu a:hover { background: rgba(255,255,255,.08); }
 .submenu__all { color: #FFC93C; }
@@ -184,7 +184,7 @@ details.toc > summary::-webkit-details-marker {
 
 /* Com JS: a navegação vira painel deslizante acionado pelo hambúrguer */
 html.js .burger { display: inline-flex; }
-html.js .main-nav { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; order: 0; margin: 0; padding: 12px 14px 32px; border-radius: 0; background: #021a4d; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .25s ease, visibility .25s ease; }
+html.js .main-nav { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; order: 0; margin: 0; padding: 12px 14px 32px; border-radius: 0; background: #032262; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .25s ease, visibility .25s ease; }
 html.js .site-header.is-open .main-nav { transform: none; visibility: visible; }
 html.js .submenu { display: none; }
 html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
@@ -249,8 +249,9 @@ html.js body.menu-aberto { overflow: hidden; }
 @media (min-width: 960px) { .site-footer__grid { grid-template-columns: 1.3fr 1fr 1fr 1.4fr; gap: 32px; } }
 .foot-title { font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #FFC93C; margin: 0 0 14px; }
 .foot-nav { display: flex; flex-direction: column; }
-.foot-link { color: #8CB1F4; text-decoration: none; font-size: 14px; line-height: 1.4; padding: 10px 0; min-height: 44px; display: flex; align-items: center; }
+.foot-link { color: #8CB1F4; text-decoration: none; font-size: 14px; line-height: 1.4; padding: 5px 0; display: flex; align-items: center; }
 .foot-link:hover { color: #fff; }
+@media (max-width: 959px) { .foot-link { min-height: 44px; padding: 8px 0; } }
 .foot-brand-text { color: #8CB1F4; font-size: 14px; line-height: 1.6; margin: 16px 0; max-width: 250px; }
 .foot-text { color: #8CB1F4; font-size: 14px; line-height: 1.5; padding: 6px 0; margin: 0; }
 .foot-pills { display: flex; flex-wrap: wrap; gap: 8px; }
