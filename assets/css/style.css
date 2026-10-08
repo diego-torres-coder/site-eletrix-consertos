@@ -204,7 +204,7 @@ html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
    Desktop (>= 960px): menu em barra, submenu suspenso
    =================================================================== */
 @media (min-width: 960px) {
-  .site-header__inner { padding: 6px 20px; gap: 16px; min-height: 56px; }
+  .site-header__inner { padding: 10px 20px; gap: 16px; min-height: 66px; }
   .brand img { height: 34px; }
   .burger { display: none !important; }
   .brand { margin-right: 0; }
