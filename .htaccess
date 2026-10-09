@@ -9,6 +9,9 @@
   RewriteCond %{HTTP_HOST} ^www\.eletrixconsertos\.com\.br$ [NC]
   RewriteRule ^(.*)$ https://eletrixconsertos.com.br/$1 [L,R=301]
 
+  # Redireciona a URL antiga da retirada para a nova (301)
+  RewriteRule ^retirada-de-eletrodomesticos/?$ /retirada-de-lava-e-seca [R=301,L]
+
   # URLs limpas: serve o arquivo .html correspondente sem expor a extensão
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^([^.]+)$ $1.html [NC,L]
