@@ -44,9 +44,15 @@
   </url>
   <url>
     <loc>https://eletrixconsertos.com.br/blog/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eletrixconsertos.com.br/blog/lava-e-seca-nao-centrifuga/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://eletrixconsertos.com.br/blog/lava-e-seca-nao-seca/</loc>

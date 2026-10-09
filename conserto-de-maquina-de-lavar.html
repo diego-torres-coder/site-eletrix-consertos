@@ -216,10 +216,9 @@
 <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=7.0">
 
 <!-- Alpine.js: usado apenas no menu mobile e no accordion de FAQ -->
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 <script defer src="/assets/js/menu.js?v=1.0"></script>
 
-<link rel="stylesheet" href="/assets/css/style.min.css?v=5.0">
+<link rel="stylesheet" href="/assets/css/style.min.css?v=6.0">
 </head>
 <body class="bg-white text-bodytext font-body antialiased">
 
@@ -669,71 +668,71 @@
     <div class="max-w-[720px] mx-auto">
       <p class="eyebrow text-center mb-3">Perguntas frequentes</p>
       <h2 class="font-heading font-semibold text-navy text-[clamp(24px,4vw,30px)] text-center mb-8">Dúvidas sobre o conserto de máquina de lavar</h2>
-      <div x-data="faqAccordion" class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3">
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(0)" :aria-expanded="isOpen(0).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Quanto custa consertar uma máquina de lavar?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(0) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(0)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">O valor depende do problema identificado no diagnóstico, então não temos um preço fixo. Você recebe o orçamento detalhado pelo WhatsApp antes de autorizar qualquer reparo.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">O valor depende do problema identificado no diagnóstico, então não temos um preço fixo. Você recebe o orçamento detalhado pelo WhatsApp antes de autorizar qualquer reparo.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(1)" :aria-expanded="isOpen(1).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Vale a pena consertar a máquina de lavar ou é melhor comprar outra?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(1) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(1)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria das vezes o reparo compensa, principalmente quando o problema é a correia, o motor ou a placa. Fazemos o diagnóstico e o orçamento antes de qualquer decisão, para você comparar com calma.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria das vezes o reparo compensa, principalmente quando o problema é a correia, o motor ou a placa. Fazemos o diagnóstico e o orçamento antes de qualquer decisão, para você comparar com calma.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(2)" :aria-expanded="isOpen(2).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Minha máquina está vazando água. Tem conserto?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(2) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(2)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria dos casos, sim. Vazamento costuma ser mangueira, vedação ou bomba — peças que trocamos por peças novas. O diagnóstico aponta a origem exata antes do reparo.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria dos casos, sim. Vazamento costuma ser mangueira, vedação ou bomba — peças que trocamos por peças novas. O diagnóstico aponta a origem exata antes do reparo.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(3)" :aria-expanded="isOpen(3).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Vocês consertam máquina de lavar de qualquer marca?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(3) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(3)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos as principais marcas do mercado, como Brastemp, Electrolux, Consul, LG e Samsung, tanto máquinas residenciais quanto comerciais. Se tiver dúvida sobre o seu modelo, é só mandar a marca pelo WhatsApp.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos as principais marcas do mercado, como Brastemp, Electrolux, Consul, LG e Samsung, tanto máquinas residenciais quanto comerciais. Se tiver dúvida sobre o seu modelo, é só mandar a marca pelo WhatsApp.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(4)" :aria-expanded="isOpen(4).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Preciso levar a máquina até vocês ou o técnico vai na minha casa?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(4) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(4)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria dos casos o atendimento é feito na sua própria casa, sem precisar transportar a máquina. Isso poupa tempo e evita o risco de danos no transporte.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Na maioria dos casos o atendimento é feito na sua própria casa, sem precisar transportar a máquina. Isso poupa tempo e evita o risco de danos no transporte.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(5)" :aria-expanded="isOpen(5).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">O conserto da máquina de lavar tem garantia?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(5) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(5)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Sim. Todo reparo sai com peças novas e 90 dias de garantia em peças e mão de obra. Se o mesmo problema voltar dentro desse prazo, a correção não tem custo.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Sim. Todo reparo sai com peças novas e 90 dias de garantia em peças e mão de obra. Se o mesmo problema voltar dentro desse prazo, a correção não tem custo.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(6)" :aria-expanded="isOpen(6).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Em quanto tempo a máquina fica pronta?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(6) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(6)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Boa parte dos reparos é resolvida no próprio atendimento. Quando depende de uma peça específica, o prazo é informado no orçamento antes de você autorizar.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Boa parte dos reparos é resolvida no próprio atendimento. Quando depende de uma peça específica, o prazo é informado no orçamento antes de você autorizar.</p>
+        </details>
 
-        <div class="border border-cardborder rounded-lg overflow-hidden">
-          <button type="button" @click="toggle(7)" :aria-expanded="isOpen(7).toString()" class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
+        <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
+          <summary class="w-full flex items-center justify-between gap-3 px-5 py-[18px] text-left bg-white">
             <span class="font-heading font-semibold text-base text-navy">Vocês atendem no meu bairro, aqui na Zona Sul de São Paulo?</span>
-            <span class="shrink-0 font-heading font-semibold text-xl text-blue" x-text="isOpen(7) ? '−' : '+'"></span>
-          </button>
-          <p x-show="isOpen(7)" x-cloak class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes e Itapecerica da Serra. A lista completa está na seção de área de atuação — se tiver dúvida, é só perguntar no WhatsApp.</p>
-        </div>
+            <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
+          </summary>
+          <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes e Itapecerica da Serra. A lista completa está na seção de área de atuação — se tiver dúvida, é só perguntar no WhatsApp.</p>
+        </details>
 
       </div>
     </div>
@@ -840,7 +839,5 @@
 <a href="https://wa.me/5511974392087?text=Oi!%20Minha%20m%C3%A1quina%20de%20lavar%20est%C3%A1%20com%20problema%20e%20gostaria%20de%20um%20diagn%C3%B3stico." aria-label="Chamar no WhatsApp" class="btn-hover-float fixed bottom-5 right-5 z-40 w-[60px] h-[60px] rounded-full bg-[linear-gradient(100deg,#FFC93C_0%,#CD9D00_100%)] flex items-center justify-center shadow-[0_4px_16px_rgba(0,17,65,0.35)]">
   <svg width="28" height="28" viewBox="0 0 448 512" fill="#001141" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
 </a>
-
-<script src="/assets/js/script.min.js?v=2.0"></script>
 </body>
 </html>

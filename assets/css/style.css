@@ -264,3 +264,11 @@ html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
 .foot-bottom { max-width: 1080px; margin: 32px auto 0; border-top: 1px solid #103988; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; color: #5381D6; font-size: 13px; }
 .foot-bottom a { color: #5381D6; text-decoration: none; }
 .foot-bottom a:hover { color: #fff; }
+
+/* ===================================================================
+   FAQ nativo (details) — funciona sem JavaScript
+   =================================================================== */
+.faq-item > summary { list-style: none; cursor: pointer; }
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-sign::after { content: "+"; }
+.faq-item[open] > summary .faq-sign::after { content: "\2212"; }
