@@ -272,3 +272,7 @@ html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
 .faq-item > summary::-webkit-details-marker { display: none; }
 .faq-sign::after { content: "+"; }
 .faq-item[open] > summary .faq-sign::after { content: "\2212"; }
+
+/* Offset do conteúdo sob o cabeçalho fixo (casa com a altura do header, elimina o vão em branco) */
+.main-offset { padding-top: 60px; }
+@media (min-width: 960px) { .main-offset { padding-top: 66px; } }
