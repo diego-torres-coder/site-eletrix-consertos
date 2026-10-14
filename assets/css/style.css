@@ -276,3 +276,6 @@ html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
 /* Offset do conteúdo sob o cabeçalho fixo (casa com a altura do header, elimina o vão em branco) */
 .main-offset { padding-top: 60px; }
 @media (min-width: 960px) { .main-offset { padding-top: 66px; } }
+
+/* Desfoque da imagem de fundo da hero (melhora o contraste do texto sobreposto) */
+.hero-img-blur { filter: blur(6px); transform: scale(1.08); }
