@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Página não encontrada (404) | Eletrix Consertos</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap">
+<style>
+  :root{
+    --navy:#032262; --navydark:#001141; --gold:#FFC93C; --gold2:#CD9D00;
+    --body:#3C4047; --gray:#696D74; --border:#D8DBDF; --tagbg:#EAF1FF; --blue:#2451A9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Roboto',Arial,sans-serif;color:var(--body);
+    background:linear-gradient(160deg,#F2F7FF 0%,#F6F7F9 55%,#FFFAEE 100%);
+    min-height:100%;display:flex;flex-direction:column;
+  }
+  .topbar{padding:14px 20px;background:var(--navy);box-shadow:0 2px 12px rgba(0,17,65,.25)}
+  .topbar img{height:34px;width:auto;display:block}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 20px 56px;}
+  .card{max-width:600px;width:100%;text-align:center}
+  .code{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);
+    font-size:clamp(64px,18vw,120px);line-height:1;letter-spacing:-2px;opacity:.9}
+  h1{font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);
+    font-size:clamp(24px,5vw,32px);line-height:1.2;margin:8px 0 12px}
+  p.lead{font-size:17px;line-height:1.6;color:var(--body);margin-bottom:8px}
+  p.redir{font-size:14px;color:var(--gray);margin-bottom:28px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:28px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;
+    font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;text-decoration:none;
+    transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 100%);color:var(--navydark)}
+  .btn-out{border:1px solid #C5C7CC;color:var(--navy);background:transparent}
+  .links{border-top:1px solid var(--border);padding-top:20px}
+  .links p{font-size:13px;color:var(--gray);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;font-family:'Poppins',sans-serif;font-weight:600}
+  .links ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center}
+  .links a{color:var(--blue);text-decoration:none;font-size:15px;font-weight:500}
+  .links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" aria-label="Eletrix Consertos, página inicial">
+      <img src="/assets/img/logo.webp" alt="Eletrix Consertos" width="192" height="38">
+    </a>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Página não encontrada</h1>
+      <p class="lead">O endereço que você tentou acessar não existe ou foi movido. Vamos te levar para a página inicial.</p>
+      <p class="redir" id="redir-aviso">Redirecionando para a página inicial em <strong id="contador">5</strong> segundos…</p>
+
+      <div class="btns">
+        <a class="btn btn-gold" href="/">Ir para a página inicial</a>
+        <a class="btn btn-out" href="https://wa.me/5511974392087?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Eletrix%20Consertos.">Falar no WhatsApp</a>
+      </div>
+
+      <nav class="links" aria-label="Links úteis">
+        <p>Talvez você procure</p>
+        <ul>
+          <li><a href="/#servicos">Serviços</a></li>
+          <li><a href="/conserto-de-lava-e-seca">Conserto de lava e seca</a></li>
+          <li><a href="/retirada-de-lava-e-seca">Retirada de lava e seca</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var segundos = 5;
+      var el = document.getElementById('contador');
+      var timer = setInterval(function () {
+        segundos -= 1;
+        if (el) el.textContent = segundos;
+        if (segundos <= 0) {
+          clearInterval(timer);
+          window.location.replace('/');
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

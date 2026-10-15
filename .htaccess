@@ -3,22 +3,36 @@
 # Força HTTPS (301) e o domínio canônico sem "www"
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteBase /
 
-  RewriteCond %{HTTP_HOST} ^www\.eletrixconsertos\.com\.br$ [NC]
-  RewriteRule ^(.*)$ https://eletrixconsertos.com.br/$1 [L,R=301]
+  # 1) Canônico: força HTTPS e domínio sem "www" em um ÚNICO salto (evita cadeias de redirecionamento)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://eletrixconsertos.com.br%{REQUEST_URI} [L,R=301]
 
-  # Redireciona a URL antiga da retirada para a nova (301)
+  # 2) URL antiga da retirada -> equivalente atual (301)
   RewriteRule ^retirada-de-eletrodomesticos/?$ /retirada-de-lava-e-seca [R=301,L]
 
-  # URLs limpas: serve o arquivo .html correspondente sem expor a extensão
+  # 3) index.html (raiz ou de subpastas) -> diretório correspondente (evita conteúdo duplicado)
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 4) .html explícito -> URL limpa, sem extensão (evita conteúdo duplicado)
+  RewriteCond %{THE_REQUEST} \s/+([^.\s]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 5) Remove a barra final de URLs que NÃO são diretórios reais (mantém /blog/ e demais pastas)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # 6) URLs limpas: serve o arquivo .html correspondente sem expor a extensão
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^([^.]+)$ $1.html [NC,L]
 </IfModule>
 
-# Página de erro 404 aponta para o index
-ErrorDocument 404 /index.html
+# Página de erro 404 — mantém o status 404; a própria página leva o visitante à home
+ErrorDocument 404 /404.html
 
 # Compressão Gzip
 <IfModule mod_deflate.c>
