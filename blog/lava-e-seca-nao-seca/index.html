@@ -41,6 +41,7 @@
       "logo": "https://eletrixconsertos.com.br/assets/img/logo.webp",
       "image": "https://eletrixconsertos.com.br/assets/img/og-image.jpg",
       "telephone": "+5511974392087",
+      "taxID": "56.096.798/0001-71",
       "sameAs": [
         "https://instagram.com/eletrixconsertos",
         "https://maps.app.goo.gl/RxrkQGaPFay1g7Qu8"
@@ -68,12 +69,7 @@
           "closes": "14:00"
         }
       ],
-      "areaServed": ["São Paulo", "Embu das Artes", "Itapecerica da Serra", "Taboão da Serra"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "10"
-      }
+      "areaServed": ["São Paulo", "Embu das Artes", "Itapecerica da Serra", "Taboão da Serra"]
     },
     {
       "@type": "WebSite",
@@ -107,8 +103,9 @@
       "description": "A roupa sai úmida da lava e seca? Veja o que conferir e quando agendar conserto em domicílio na Zona Sul de SP com a Eletrix Consertos.",
       "inLanguage": "pt-BR",
       "datePublished": "2026-10-04",
+      "dateModified": "2026-10-22",
       "articleSection": "Lava e seca",
-      "author": { "@id": "https://eletrixconsertos.com.br/#negocio" },
+      "author": { "@type": "Person", "name": "Diego Moura Torres" },
       "publisher": { "@id": "https://eletrixconsertos.com.br/#negocio" },
       "mainEntityOfPage": { "@id": "https://eletrixconsertos.com.br/blog/lava-e-seca-nao-seca/#webpage" },
       "image": "https://eletrixconsertos.com.br/assets/img/og-image.jpg"
@@ -158,7 +155,7 @@
 <!-- Tailwind: classes usadas extraídas para CSS estático (sem o motor da CDN em runtime) -->
 <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=7.5">
 <script defer src="/assets/js/menu.js?v=1.0"></script>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=6.3">
+<link rel="stylesheet" href="/assets/css/style.min.css?v=6.4">
 </head>
 <body class="bg-white text-bodytext font-body antialiased">
 
@@ -183,15 +180,12 @@
             <li><a href="/higienizacao-de-lava-e-seca">Higienização de lava e seca</a></li>
             <li><a href="/higienizacao-de-maquina-de-lavar">Higienização de máquina de lavar</a></li>
             <li><a href="/instalacao-de-maquina-de-lavar">Instalação de máquina de lavar</a></li>
-            <!-- TODO: ativar quando a página existir
-            <li><a href="/conserto-de-placas-eletronicas">Conserto de placas eletrônicas</a></li>
-            -->
             <li class="submenu__sep" aria-hidden="true"></li>
             <li><a class="submenu__all" href="/#servicos">Ver todos os serviços</a></li>
           </ul>
         </li>
         <li><a class="nav-link" href="/retirada-de-lava-e-seca">Retirada de lava e seca</a></li>
-        <li><a class="nav-link" href="/#area-atuacao">Área de atuação</a></li>
+        <li><a class="nav-link" href="/area-de-atuacao">Área de atuação</a></li>
         <li><a class="nav-link nav-active" href="/blog/" aria-current="page">Blog</a></li>
         <li><a class="nav-link" href="/contato">Contato</a></li>
       </ul>
@@ -445,7 +439,7 @@
           <div class="bg-white border border-cardborder rounded-lg p-5">
             <span class="font-heading font-bold text-gold text-lg">03</span>
             <h3 class="font-heading font-semibold text-navy text-[16px] mt-1 mb-1.5">Você tem garantia</h3>
-            <p class="text-[15px] leading-[1.6] text-graytext">Peças novas, quando há substituição, e 90 dias de garantia no reparo.</p>
+            <p class="text-[15px] leading-[1.6] text-graytext">Peças de qualidade, quando há substituição, e 90 dias de garantia no reparo.</p>
           </div>
         </div>
 
@@ -526,7 +520,7 @@
       <section class="bg-[#F6F7F9] border border-cardborder rounded-xl p-6 mb-8">
         <p class="eyebrow mb-2">Sobre a Eletrix Consertos</p>
         <h2 class="font-heading font-semibold text-navy text-[20px] mb-2">Técnica para resolver. Clareza para decidir.</h2>
-        <p class="text-[15px] leading-[1.6] text-bodytext mb-4">Assistência técnica residencial na Zona Sul de São Paulo. Consertos com seriedade, transparência e sem gambiarra: atendimento em domicílio, peças novas e 90 dias de garantia.</p>
+        <p class="text-[15px] leading-[1.6] text-bodytext mb-4">Assistência técnica residencial na Zona Sul de São Paulo. Consertos com seriedade, transparência e sem gambiarra: atendimento em domicílio, peças de qualidade e 90 dias de garantia.</p>
         <a href="/" class="btn-hover-outline inline-flex items-center justify-center border border-[#C5C7CC] text-navy font-heading font-medium text-sm px-5 py-2.5 rounded-full">Conheça a Eletrix Consertos</a>
       </section>
 
@@ -570,9 +564,6 @@
         <a class="foot-link" href="/higienizacao-de-lava-e-seca">Higienização de lava e seca</a>
         <a class="foot-link" href="/higienizacao-de-maquina-de-lavar">Higienização de máquina de lavar</a>
         <a class="foot-link" href="/instalacao-de-maquina-de-lavar">Instalação de máquina de lavar</a>
-        <!-- TODO: ativar quando a página existir
-        <a class="foot-link" href="/conserto-de-placas-eletronicas">Conserto de placas eletrônicas</a>
-        -->
       </div>
     </nav>
     <nav class="foot-col" aria-label="Eletrix">
@@ -581,10 +572,17 @@
         <a class="foot-link" href="/">Página inicial</a>
         <a class="foot-link" href="/#sobre">Quem somos</a>
         <a class="foot-link" href="/retirada-de-lava-e-seca">Retirada de lava e seca</a>
-        <a class="foot-link" href="/#area-atuacao">Área de atuação</a>
+        <a class="foot-link" href="/area-de-atuacao">Área de atuação</a>
         <a class="foot-link" href="/#faq">Perguntas frequentes</a>
         <a class="foot-link" href="/blog/">Blog</a>
         <a class="foot-link" href="/contato">Contato</a>
+      </div>
+    </nav>
+    <nav class="foot-col" aria-label="Atendemos em">
+      <h2 class="foot-title">Atendemos em</h2>
+      <div class="foot-nav">
+        <a class="foot-link" href="/conserto-de-eletrodomesticos-embu-das-artes">Embu das Artes</a>
+        <a class="foot-link" href="/area-de-atuacao">Todas as áreas</a>
       </div>
     </nav>
     <div class="foot-col">

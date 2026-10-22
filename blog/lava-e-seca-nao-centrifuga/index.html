@@ -41,6 +41,7 @@
       "logo": "https://eletrixconsertos.com.br/assets/img/logo.webp",
       "image": "https://eletrixconsertos.com.br/assets/img/og-image.jpg",
       "telephone": "+5511974392087",
+      "taxID": "56.096.798/0001-71",
       "sameAs": [
         "https://instagram.com/eletrixconsertos",
         "https://maps.app.goo.gl/RxrkQGaPFay1g7Qu8"
@@ -54,12 +55,7 @@
         "postalCode": "05887-270",
         "addressCountry": "BR"
       },
-      "areaServed": ["São Paulo", "Embu das Artes", "Itapecerica da Serra", "Taboão da Serra"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "10"
-      }
+      "areaServed": ["São Paulo", "Embu das Artes", "Itapecerica da Serra", "Taboão da Serra"]
     },
     {
       "@type": "WebSite",
@@ -93,8 +89,9 @@
       "description": "Causas mais comuns de uma lava e seca que não centrifuga, o que conferir com segurança e quando chamar um técnico na Zona Sul de São Paulo.",
       "inLanguage": "pt-BR",
       "datePublished": "2026-10-08",
+      "dateModified": "2026-10-22",
       "articleSection": "Lava e seca",
-      "author": { "@id": "https://eletrixconsertos.com.br/#negocio" },
+      "author": { "@type": "Person", "name": "Diego Moura Torres" },
       "publisher": { "@id": "https://eletrixconsertos.com.br/#negocio" },
       "mainEntityOfPage": { "@id": "https://eletrixconsertos.com.br/blog/lava-e-seca-nao-centrifuga/#webpage" },
       "image": "https://eletrixconsertos.com.br/assets/img/conserto-de-lava-e-seca.webp"
@@ -121,12 +118,12 @@
         {
           "@type": "Question",
           "name": "Vale a pena consertar uma lava e seca que não centrifuga?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Depende do que for encontrado no diagnóstico. Muitas causas são simples (drenagem, carga, trava). Quando envolve motor ou placa, avaliamos e passamos o orçamento antes do reparo, para você decidir com clareza." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Depende do que for encontrado no diagnóstico. Muitas causas são simples (drenagem, carga, trava). Quando envolve o motor ou outra parte mecânica, avaliamos e passamos o orçamento antes do reparo, para você decidir com clareza." }
         },
         {
           "@type": "Question",
           "name": "Vocês atendem o meu bairro na Zona Sul de São Paulo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes e Itapecerica da Serra. Mande o seu bairro pelo WhatsApp para confirmarmos." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes, Itapecerica da Serra e Taboão da Serra. Mande o seu bairro pelo WhatsApp para confirmarmos." }
         }
       ]
     }
@@ -142,7 +139,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap"></noscript>
 
 <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=7.5">
-<link rel="stylesheet" href="/assets/css/style.min.css?v=6.3">
+<link rel="stylesheet" href="/assets/css/style.min.css?v=6.4">
 <script defer src="/assets/js/menu.js?v=1.0"></script>
 </head>
 <body class="bg-white text-bodytext font-body antialiased">
@@ -168,15 +165,12 @@
             <li><a href="/higienizacao-de-lava-e-seca">Higienização de lava e seca</a></li>
             <li><a href="/higienizacao-de-maquina-de-lavar">Higienização de máquina de lavar</a></li>
             <li><a href="/instalacao-de-maquina-de-lavar">Instalação de máquina de lavar</a></li>
-            <!-- TODO: ativar quando a página existir
-            <li><a href="/conserto-de-placas-eletronicas">Conserto de placas eletrônicas</a></li>
-            -->
             <li class="submenu__sep" aria-hidden="true"></li>
             <li><a class="submenu__all" href="/#servicos">Ver todos os serviços</a></li>
           </ul>
         </li>
         <li><a class="nav-link" href="/retirada-de-lava-e-seca">Retirada de lava e seca</a></li>
-        <li><a class="nav-link" href="/#area-atuacao">Área de atuação</a></li>
+        <li><a class="nav-link" href="/area-de-atuacao">Área de atuação</a></li>
         <li><a class="nav-link nav-active" href="/blog/" aria-current="page">Blog</a></li>
         <li><a class="nav-link" href="/contato">Contato</a></li>
       </ul>
@@ -388,7 +382,7 @@
       <section id="servico" class="scroll-mt-24 mb-10">
         <p class="font-heading font-bold text-blue text-sm mb-1">05</p>
         <h2 class="font-heading font-semibold text-navy text-[clamp(22px,4vw,28px)] leading-snug mb-4">Conserto de lava e seca na Zona Sul de SP</h2>
-        <p>A Eletrix Consertos faz o diagnóstico e o reparo de lava e seca <strong>em domicílio</strong> na Zona Sul de São Paulo, além de Embu das Artes e Itapecerica da Serra. Explicamos o que foi encontrado e passamos o orçamento antes de qualquer reparo.</p>
+        <p>A Eletrix Consertos faz o diagnóstico e o reparo de lava e seca <strong>em domicílio</strong> na Zona Sul de São Paulo, além de Embu das Artes, Itapecerica da Serra e Taboão da Serra. Explicamos o que foi encontrado e passamos o orçamento antes de qualquer reparo.</p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
           <div class="bg-white border border-cardborder rounded-lg p-5">
             <span class="font-heading font-bold text-gold text-lg">01</span>
@@ -403,7 +397,7 @@
           <div class="bg-white border border-cardborder rounded-lg p-5">
             <span class="font-heading font-bold text-gold text-lg">03</span>
             <h3 class="font-heading font-semibold text-navy text-[16px] mt-1 mb-1.5">Você aprova</h3>
-            <p class="text-[15px] leading-[1.6] text-graytext">Com peças novas quando há troca e 90 dias de garantia no reparo.</p>
+            <p class="text-[15px] leading-[1.6] text-graytext">Com peças de qualidade quando há troca e 90 dias de garantia no reparo.</p>
           </div>
         </div>
         <p class="text-[15px]">Veja a página do serviço: <a href="/conserto-de-lava-e-seca" class="text-blue font-medium hover:underline">Conserto de lava e seca em domicílio</a>.</p>
@@ -450,14 +444,14 @@
               <span class="font-heading font-semibold text-[15px] text-navy">Vale a pena consertar?</span>
               <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
             </summary>
-            <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Depende do que for encontrado no diagnóstico. Muitas causas são simples (drenagem, carga, trava). Quando envolve motor ou placa, avaliamos e passamos o orçamento antes do reparo, para você decidir com clareza.</p>
+            <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Depende do que for encontrado no diagnóstico. Muitas causas são simples (drenagem, carga, trava). Quando envolve o motor ou outra parte mecânica, avaliamos e passamos o orçamento antes do reparo, para você decidir com clareza.</p>
           </details>
           <details class="faq-item border border-cardborder rounded-lg overflow-hidden">
             <summary class="w-full flex items-center justify-between gap-3 px-5 py-4 text-left bg-white">
               <span class="font-heading font-semibold text-[15px] text-navy">Vocês atendem o meu bairro na Zona Sul de São Paulo?</span>
               <span class="faq-sign shrink-0 font-heading font-semibold text-xl text-blue"></span>
             </summary>
-            <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes e Itapecerica da Serra. Mande o seu bairro pelo WhatsApp para confirmarmos.</p>
+            <p class="text-[15px] leading-[1.6] text-[#3C4047] px-5 pb-5">Atendemos diversos bairros da Zona Sul de São Paulo, além de Embu das Artes, Itapecerica da Serra e Taboão da Serra. Mande o seu bairro pelo WhatsApp para confirmarmos.</p>
           </details>
         </div>
       </section>
@@ -468,7 +462,6 @@
         <p class="text-[15px] leading-[1.6] text-bodytext mb-3">As verificações de uso se apoiam em orientações públicas dos fabricantes. Consulte sempre o manual do seu modelo.</p>
         <ul class="text-[15px]">
           <li><a href="https://www.samsung.com/br/support/home-appliances/" target="_blank" rel="noopener nofollow" class="text-blue hover:underline">Samsung — suporte de lavadoras e lava e seca</a></li>
-          <li><a href="https://www.lg.com/br/suporte" target="_blank" rel="noopener nofollow" class="text-blue hover:underline">LG — suporte de eletrodomésticos</a></li>
         </ul>
         <p class="text-[13px] text-graytext mt-3">Conteúdo informativo. Não substitui o diagnóstico técnico do seu aparelho.</p>
       </section>
@@ -477,7 +470,7 @@
       <section class="bg-[#F6F7F9] border border-cardborder rounded-xl p-6 mb-8">
         <p class="eyebrow mb-2">Sobre a Eletrix Consertos</p>
         <h2 class="font-heading font-semibold text-navy text-[20px] mb-2">Entendeu o problema? O próximo passo é o diagnóstico.</h2>
-        <p class="text-[15px] leading-[1.6] text-bodytext mb-4">Assistência técnica de eletrodomésticos em domicílio na Zona Sul de São Paulo, com seriedade, transparência e sem gambiarra: diagnóstico explicado, orçamento antes do reparo, peças novas quando há troca e 90 dias de garantia.</p>
+        <p class="text-[15px] leading-[1.6] text-bodytext mb-4">Assistência técnica de eletrodomésticos em domicílio na Zona Sul de São Paulo, com seriedade, transparência e sem gambiarra: diagnóstico explicado, orçamento antes do reparo, peças de qualidade quando há troca e 90 dias de garantia.</p>
         <a href="https://wa.me/5511974392087?text=Ol%C3%A1!%20Li%20o%20artigo%20da%20Eletrix%20sobre%20lava%20e%20seca%20que%20n%C3%A3o%20centrifuga.%20Gostaria%20de%20ajuda%20para%20avaliar%20minha%20m%C3%A1quina.%20Meu%20bairro%3A%20____." class="btn-hover-gold inline-flex items-center justify-center gap-2 bg-gold text-navydark font-heading font-semibold text-sm px-6 py-3 rounded-full">
           <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor" class="shrink-0" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
           Falar com a Eletrix
@@ -513,9 +506,6 @@
         <a class="foot-link" href="/higienizacao-de-maquina-de-lavar">Higienização de máquina de lavar</a>
         <a class="foot-link" href="/instalacao-de-maquina-de-lavar">Instalação de máquina de lavar</a>
         <a class="foot-link" href="/retirada-de-lava-e-seca">Retirada de lava e seca</a>
-        <!-- TODO: ativar quando a página existir
-        <a class="foot-link" href="/conserto-de-placas-eletronicas">Conserto de placas eletrônicas</a>
-        -->
       </div>
     </nav>
     <nav class="foot-col" aria-label="Eletrix">
@@ -524,10 +514,17 @@
         <a class="foot-link" href="/">Página inicial</a>
         <a class="foot-link" href="/#sobre">Quem somos</a>
         <a class="foot-link" href="/retirada-de-lava-e-seca">Retirada de lava e seca</a>
-        <a class="foot-link" href="/#area-atuacao">Área de atuação</a>
+        <a class="foot-link" href="/area-de-atuacao">Área de atuação</a>
         <a class="foot-link" href="/#faq">Perguntas frequentes</a>
         <a class="foot-link" href="/blog/">Blog</a>
         <a class="foot-link" href="/contato">Contato</a>
+      </div>
+    </nav>
+    <nav class="foot-col" aria-label="Atendemos em">
+      <h2 class="foot-title">Atendemos em</h2>
+      <div class="foot-nav">
+        <a class="foot-link" href="/conserto-de-eletrodomesticos-embu-das-artes">Embu das Artes</a>
+        <a class="foot-link" href="/area-de-atuacao">Todas as áreas</a>
       </div>
     </nav>
     <div class="foot-col">

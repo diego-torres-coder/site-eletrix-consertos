@@ -250,7 +250,7 @@ html.js .nav-toggle[aria-expanded="true"] + .submenu { display: block; }
    =================================================================== */
 .site-footer { background: #001141; border-top: 3px solid #FFC93C; padding: 48px 20px 24px; }
 .site-footer__grid { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 36px; }
-@media (min-width: 960px) { .site-footer__grid { grid-template-columns: 1.3fr 1fr 1fr 1.4fr; gap: 32px; } }
+@media (min-width: 960px) { .site-footer__grid { grid-template-columns: 1.3fr 1fr 1fr 1fr 1.3fr; gap: 32px; } }
 .foot-title { font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #FFC93C; margin: 0 0 14px; }
 .foot-nav { display: flex; flex-direction: column; }
 .foot-link { color: #8CB1F4; text-decoration: none; font-size: 14px; line-height: 1.4; padding: 5px 0; display: flex; align-items: center; }
