@@ -1,6 +1,6 @@
 // Guarda os arquivos da agenda para abrir sem internet.
 // Ao mudar qualquer arquivo, aumente a versão abaixo para o celular baixar a nova.
-const CACHE = "agenda-eletrix-v2";
+const CACHE = "agenda-eletrix-v3";
 const FILES = ["./", "index.html", "agenda.css", "agenda.js", "manifest.webmanifest",
   "fonts/poppins-Regular.woff2", "fonts/poppins-Medium.woff2", "fonts/poppins-Bold.woff2",
   "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png"];

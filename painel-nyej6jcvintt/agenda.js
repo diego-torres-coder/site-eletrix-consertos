@@ -20,9 +20,9 @@ if(navigator.storage && navigator.storage.persist){ navigator.storage.persist().
 
 /* ================= utilidades ================= */
 const PER = {manha:"Manhã", tarde:"Tarde"};
-const APARELHOS = ["Micro-ondas","Máquina de lavar","Lava e seca","Lava-louças","Cooktop","Air fryer","Outro"];
+const APARELHOS = ["Micro-ondas","Máquina de lavar","Lava e seca","Lava-louças","Geladeira","Cooktop","Air fryer","Outro"];
 const SERVICOS = ["Conserto","Orçamento","Higienização","Conversão de gás","Máquina barulhenta","Retorno (garantia)"];
-const MARCAS = ["Brastemp","Consul","Electrolux","LG","Samsung","Midea","Panasonic","Philco","Mondial","Britânia"];
+const MARCAS = ["Brastemp","Britânia","Consul","Electrolux","LG","Midea","Panasonic","Philco","Samsung","Outras"];
 const SITUACOES = {agendado:"Agendado", confirmado:"Confirmado", concluido:"Concluído", cancelado:"Cancelado"};
 const DOW = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
 const DOW_LONG = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
@@ -93,7 +93,7 @@ function render(){
           <span>
             <span class="who">${esc(a.cliente)} ${a.hora?`<span class="tag time">${esc(a.hora)}</span>`:""} ${a.status==="concluido"?`<span class="tag done">Concluído</span>`:a.status==="confirmado"?`<span class="tag conf">Confirmado</span>`:""}</span>
             <span class="what">${esc([a.servico,a.aparelho,a.marca].filter(Boolean).join(" · "))}</span>
-            ${a.endereco?`<span class="where">${esc(a.endereco)}</span>`:""}
+            ${a.endereco||a.apto?`<span class="where">${esc([a.endereco,a.apto].filter(Boolean).join(" · "))}</span>`:""}
           </span></button>`;
       });
       for(let k=u;k<MAX();k++) p += `<button class="empty" data-new="${per}"><span class="plus">+</span>Vaga ${k+1} livre · encaixar atendimento</button>`;
@@ -150,9 +150,10 @@ function openForm(a, pre={}){
         <div class="f"><label for="fHora">Horário</label><input id="fHora" value="${esc(v.hora)}" placeholder="ex.: 9h30"></div>
       </div>
       <div class="f"><label for="fEnd">Endereço / bairro</label><input id="fEnd" value="${esc(v.endereco)}" placeholder="Rua, nº, bairro"></div>
+      <div class="f"><label for="fApto">Apartamento (bloco / nº)</label><input id="fApto" value="${esc(v.apto)}" placeholder="Preencha se for apartamento — ex.: Bloco B, apto 42"></div>
       <div class="row2">
         <div class="f"><label for="fAp">Aparelho</label><select id="fAp">${opt(APARELHOS,v.aparelho)}</select></div>
-        <div class="f"><label for="fMar">Marca</label><input id="fMar" list="lMarcas" value="${esc(v.marca)}" placeholder="Brastemp, LG…">${dl({id:"lMarcas",v:MARCAS})}</div>
+        <div class="f"><label for="fMar">Marca</label><select id="fMar">${opt(MARCAS,v.marca)}</select></div>
       </div>
       <div class="row2">
         <div class="f"><label for="fSrv">Serviço</label><select id="fSrv">${opt(SERVICOS,v.servico)}</select></div>
@@ -185,7 +186,7 @@ function openForm(a, pre={}){
     if(!cli) return $("fErr").textContent = "Coloque o nome do cliente.";
     if(used(d,per,a&&a.id)>=MAX()) return $("fErr").textContent = `${PER[per]} desse dia já tem ${MAX()} atendimentos.`;
     const body = { data:d, periodo:per, cliente:cli, telefone:$("fTel").value.trim(), hora:$("fHora").value.trim(),
-      endereco:$("fEnd").value.trim(), aparelho:$("fAp").value, marca:$("fMar").value.trim(), servico:$("fSrv").value,
+      endereco:$("fEnd").value.trim(), apto:$("fApto").value.trim(), aparelho:$("fAp").value, marca:$("fMar").value.trim(), servico:$("fSrv").value,
       valor:$("fVal").value.trim(), obs:$("fObs").value.trim(), status: a ? a.status : "agendado", criado: a ? (a.criado||Date.now()) : Date.now() };
     if(a) state.items = state.items.map(x => x.id===a.id ? {id:a.id, ...body} : x);
     else state.items.push({id:uid(), ...body});
@@ -207,6 +208,7 @@ function openDetail(a){
       ${a.aparelho||a.marca?`<dt>Aparelho</dt><dd>${esc([a.aparelho,a.marca].filter(Boolean).join(" · "))}</dd>`:""}
       ${a.telefone?`<dt>Telefone</dt><dd>${esc(a.telefone)}</dd>`:""}
       ${a.endereco?`<dt>Endereço</dt><dd>${esc(a.endereco)}</dd>`:""}
+      ${a.apto?`<dt>Apartamento</dt><dd>${esc(a.apto)}</dd>`:""}
       ${a.valor?`<dt>Valor</dt><dd>R$ ${esc(a.valor)}</dd>`:""}
       ${a.obs?`<dt>Obs.</dt><dd>${esc(a.obs)}</dd>`:""}
       <dt>Situação</dt><dd>${SITUACOES[a.status]||"Agendado"}</dd>
@@ -289,7 +291,7 @@ function exportJson(){
   closeSheet(); render(); toast("Backup baixado. Guarde o arquivo num lugar seguro.");
 }
 function exportCsv(){
-  const cols = [["data","Data"],["periodo","Período"],["hora","Horário"],["cliente","Cliente"],["telefone","Telefone"],["endereco","Endereço"],["aparelho","Aparelho"],["marca","Marca"],["servico","Serviço"],["valor","Valor (R$)"],["status","Situação"],["obs","Observações"]];
+  const cols = [["data","Data"],["periodo","Período"],["hora","Horário"],["cliente","Cliente"],["telefone","Telefone"],["endereco","Endereço"],["apto","Apartamento"],["aparelho","Aparelho"],["marca","Marca"],["servico","Serviço"],["valor","Valor (R$)"],["status","Situação"],["obs","Observações"]];
   const cell = v => `"${String(v??"").replace(/"/g,'""')}"`;
   const rows = state.items.slice().sort((a,b)=>a.data.localeCompare(b.data)||a.periodo.localeCompare(b.periodo)).map(a => cols.map(([k])=>{
     if(k==="data") return cell(a.data.split("-").reverse().join("/"));
