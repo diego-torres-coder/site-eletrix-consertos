@@ -16,6 +16,9 @@
   # 2b) Conversão de cooktop (página antiga) -> conversão de fogão para gás encanado (unificada) (301)
   RewriteRule ^conversao-de-gas-para-cooktop/?$ /conversao-de-fogao-para-gas-encanado [R=301,L]
 
+  # 2c) Lava e seca Midea (página antiga) -> página geral de lava e seca (301)
+  RewriteRule ^conserto-de-lava-e-seca-midea/?$ /conserto-de-lava-e-seca [R=301,L]
+
   # 3) index.html (raiz ou de subpastas) -> diretório correspondente (evita conteúdo duplicado)
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L]
