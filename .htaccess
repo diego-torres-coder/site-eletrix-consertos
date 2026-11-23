@@ -19,6 +19,9 @@
   # 2c) Lava e seca Midea (página antiga) -> página geral de lava e seca (301)
   RewriteRule ^conserto-de-lava-e-seca-midea/?$ /conserto-de-lava-e-seca [R=301,L]
 
+  # 2c2) Página de sintoma "não centrifuga" descontinuada -> conserto de máquina de lavar (301)
+  RewriteRule ^maquina-de-lavar-nao-centrifuga/?$ /conserto-de-maquina-de-lavar [R=301,L]
+
   # 2d) Páginas por cidade descontinuadas (Embu das Artes, Itapecerica da Serra e Taboão da Serra) -> páginas gerais (301)
   RewriteRule ^conserto-de-micro-ondas-(embu-das-artes|itapecerica-da-serra)/?$ /conserto-de-micro-ondas [R=301,L]
   RewriteRule ^conserto-de-maquina-de-lavar-(embu-das-artes|itapecerica-da-serra)/?$ /conserto-de-maquina-de-lavar [R=301,L]
